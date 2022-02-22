@@ -1,0 +1,219 @@
+<-------Class.cs------>
+using System;
+
+namespace pki
+{
+    public class Class1
+    {
+        public void arrlist()
+        {
+            // Array Length chek
+            string[] arr1 = { "Madhav", "Rohit", "pravin", "kumar" };
+            for (int i = 3; i <= arr1.Length - 1; i++)
+            {
+                Console.WriteLine(arr1[2]);
+
+            }
+
+        }
+        public void hello()
+        {
+            // foreach loop chalana array
+            int[] arr2 = { 1, 2, 3, 5 };
+            foreach (int p in arr2)
+            {
+                Console.WriteLine(p);
+            }
+
+        }
+
+    }
+    //difalt conctructor
+    public class Add
+    {
+        int a, b;
+        public void addon()
+        {
+            a = 12;
+            b = 20;
+            {
+                int c = a + b;
+                Console.WriteLine(c);
+            }
+        }
+
+    }
+
+    // Inheritense Malatileval base class 13/2/2022
+    public class x
+    {
+        public string Name;
+        public string add;
+        public string email;
+        public int Id;
+        public void Employee()
+        {
+            string details = Name + add + email + Id;
+            Console.WriteLine(details);
+        }
+
+    }
+    // Drive Class
+    public class y : x
+    {
+        public void pontname()
+        {
+
+            Console.WriteLine("p");
+        }
+
+
+    }
+
+
+    // Palymeerphism  ---- TYPE OF ----1)Methed  Ovearlaoding ------  Compliletime 2) Methed ---Overrinding--- Runtime 
+    public class kl
+    {
+        public void nomber(int x, int k, int l)
+        {
+            Console.WriteLine(x + k + l);
+
+        }
+        public void nomber(float x, float y)
+        {
+            Console.WriteLine(x + y);
+        }
+
+    }
+
+    public class phone
+    {
+        public void call()
+        {
+            Console.WriteLine("pravin");
+
+        }
+    }
+    public class koll : phone
+    {
+        public void holl()
+        {
+            Console.WriteLine("hello");
+        }
+    }
+    // public Abstract class exampal 21/02/2022
+    public abstract class bom
+    {
+        public string name;
+        public string email;
+        public int salary;
+        public abstract void anuasalry();
+        public virtual void details()
+        {
+            Console.WriteLine(name + email);
+
+        }
+
+    }
+    public class pramanet : bom
+    {
+        public override void anuasalry()
+        {
+            float anuasalry = 12 * salary + (salary * 23 * 10 / 100);
+            Console.WriteLine("Name");
+            Console.WriteLine("anuasalry----->" + anuasalry);
+        }
+    }
+    public class Tmprrary : bom
+    {
+        public override void anuasalry()
+        {
+            float anuasalry = 12 * salary + (salary * 12 * 12 / 100);
+            Console.WriteLine("Email");
+            Console.WriteLine("anuasalry----->" + anuasalry);
+        }
+    }
+    public class mon : bom
+    {
+        public override void anuasalry()
+        {
+            float anuasalry = 12 * salary + (salary * 12 * 24 / 100);
+            Console.WriteLine("Salary");
+            Console.WriteLine("anuasalry----->" + anuasalry);
+        }
+    }
+    public class addition
+    {
+        int a;
+        int b;
+        private int id;
+
+        public void addtwoNo()
+        {
+            Console.WriteLine(a + b);
+        }
+
+        public void set(int a)
+        {
+            id = a;
+
+                
+        }
+        public int get()
+        {
+            return  id;
+        }
+
+
+    }
+
+}
+<-----Program Cs---->
+using System;
+using pki;
+namespace Acedmiy
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+           Class1 ccv = new Class1();
+            ccv.arrlist();
+            ccv.hello();
+            Add cvc = new Add();
+            cvc.addon();
+
+            // Inheritense Malatipal 13/2/2022
+            y bb = new y();
+            bb.Name = " ramkumar";
+            bb.add = "  jagatpur";
+            bb.email = " pravin@gmail.com";
+            bb.Id = '2';
+            bb.pontname();
+              
+            bb.Employee();
+            // Palymeerphism
+            phone nn = new phone();
+            nn.call();
+            koll mm = new koll();
+            mm.holl();
+            // public Abstract class exampal 21/02/2022
+            pramanet gh = new pramanet();
+            gh.salary = Int32.Parse(Console.ReadLine());
+            gh.anuasalry();
+            Tmprrary jk = new Tmprrary();
+            jk.salary = Int32.Parse(Console.ReadLine());
+            jk.anuasalry();
+            mon bg = new mon();
+            bg.salary = Int32.Parse(Console.ReadLine());
+            bg.anuasalry();
+
+            // properties  should have at least one accessor, either set or get. The set accessor
+            addition fd = new addition();
+            fd.set(1123);
+            int c = fd.get();
+            Console.WriteLine(c);
+           
+        }
+    }
+}
